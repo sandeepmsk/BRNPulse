@@ -1,0 +1,6 @@
+framework module Pods_BRNPulse {
+  umbrella header "Pods-BRNPulse-umbrella.h"
+
+  export *
+  module * { export * }
+}

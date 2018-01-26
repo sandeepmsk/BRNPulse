@@ -31,10 +31,46 @@ class HomePageTVC: UITableViewController
     var attendanceDetailsArr = ["Total Days","Working Days","Leaves","Absents","Days Attended","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
     var detailsArr = ["169","129","2 days","8 days","112 days","112 times","976:00:00","962:49:53","-14:11:07","07:53:31(99%)","00:06:28(1%)","3 times","24 times","3660","2910","79.5082%"]
     
+    var studentDic:[String:String]?
+    
+    var URLSessionObj:URLSession?
+    var URLReq:URLRequest?
+    var dataTask:URLSessionDataTask?
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        print(self.studentDic!)
+        
+        self.URLSessionObj = URLSession(configuration: .default)
+        self.URLReq = URLRequest(url: URL(string: "http://www.brninfotech.com/pulse/modules/admin/DashboardSnippets.php")!)
+        
+        self.URLReq?.httpMethod = "POST"
+        
+        var dataToSever = "funcName=getUserAttendance&studentIDByAdmin=NoValue"
+        
+        self.URLReq?.httpBody = dataToSever.data(using: .utf8)
+        
+        self.dataTask = self.URLSessionObj?.dataTask(with: self.URLReq!, completionHandler: { (data, response, error) in
+            print(data)
+            do
+            {
+                //                var responseObj = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions)
+                
+                 var responseArr = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [[String:Any]]
+                print(responseArr)
+            }
+            catch
+            {
+                print("something went wrong")
+            }
+        })
+        
+        self.dataTask?.resume()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -78,7 +114,18 @@ class HomePageTVC: UITableViewController
         if indexPath.section == 0
         {
             self.tableView.rowHeight = 230;
-            let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
+            let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
+        
+            var firstName = self.studentDic?["firstName"]!
+            var surName = self.studentDic?["surName"]!
+            print("\(firstName!) \(surName!)")
+            
+            print(self.studentDic?["studentID"]!)
+            cell.studetnNameLbl.text = "\(firstName!) \(surName!)"
+            cell.studentIDLbl.text = self.studentDic?["studentID"]!
+            
+            
+//            cell.studetnNameString(describing: Lbl.text = self.studentDic?["s)tudentName"] as! String
             return cell
         }
         else

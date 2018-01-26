@@ -78,6 +78,13 @@ class ViewController: UIViewController
                     if responseDic["loggedIn"] == "yes"
                     {
                         print("logged in successfully")
+                        
+                        var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+                        HPTVC.studentDic = responseDic
+                        self.present(HPTVC, animated: true, completion: nil)
+                        
+                        
+                        
                     }
                     else
                     {

@@ -56,7 +56,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <variation key="heightClass=compact-widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         </variation>
@@ -275,13 +275,13 @@
         <!--Home PageTVC-->
         <scene sceneID="zjE-qN-V3f">
             <objects>
-                <tableViewController id="cWT-Nf-qqH" customClass="HomePageTVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HPTVC" id="cWT-Nf-qqH" customClass="HomePageTVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="232" sectionHeaderHeight="28" sectionFooterHeight="28" id="l8C-2i-Kab">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="230" id="2Ac-7S-M2I">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="230" id="2Ac-7S-M2I" customClass="ProfileTableViewCell" customModule="BRNPulse" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ac-7S-M2I" id="be7-UU-g3O">
@@ -351,6 +351,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.91800000000000004" green="0.91800000000000004" blue="0.91800000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="batchIDLbl" destination="wnJ-RO-6cO" id="NBs-tJ-fiK"/>
+                                    <outlet property="profilePicImgView" destination="1Et-op-l5g" id="fOs-Ea-ynI"/>
+                                    <outlet property="studentIDLbl" destination="3vZ-da-jBV" id="ixL-8Y-7y0"/>
+                                    <outlet property="studetnNameLbl" destination="lsS-Dd-BI5" id="OV0-NE-oV0"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="attendanceCell" textLabel="gAq-9d-4AE" detailTextLabel="bIt-ZL-uLO" rowHeight="50" style="IBUITableViewCellStyleValue1" id="CzM-8D-X4w">
                                 <rect key="frame" x="0.0" y="258" width="320" height="50"/>
@@ -396,6 +402,7 @@
         <!--Table View Controller-->
         <scene sceneID="4OR-bT-1jn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U71-yT-Ng3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Qsb-j6-bH1" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oNP-tX-Q5Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -417,7 +424,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U71-yT-Ng3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="123"/>
         </scene>

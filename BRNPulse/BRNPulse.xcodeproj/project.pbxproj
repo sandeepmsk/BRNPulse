@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0B891B201B58D200CBAE56 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */; };
 		5C64D902201858D3006AEBAD /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64D900201858D3006AEBAD /* ENSideMenu.swift */; };
 		5C64D903201858D3006AEBAD /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64D901201858D3006AEBAD /* ENSideMenuNavigationController.swift */; };
 		5C64D90920185CAE006AEBAD /* sandeep.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5C64D90820185CAE006AEBAD /* sandeep.jpeg */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5C64D900201858D3006AEBAD /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		5C64D901201858D3006AEBAD /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		5C64D90820185CAE006AEBAD /* sandeep.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandeep.jpeg; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				5C6AAE4620171A94000EF7D8 /* AppDelegate.swift */,
 				5C6AAE4820171A94000EF7D8 /* ViewController.swift */,
 				5C6AAE5E201767DE000EF7D8 /* HomePageTVC.swift */,
+				5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */,
 				5C6AAE4A20171A94000EF7D8 /* Main.storyboard */,
 				5C6AAE4D20171A94000EF7D8 /* Assets.xcassets */,
 				5C6AAE4F20171A94000EF7D8 /* LaunchScreen.storyboard */,
@@ -249,6 +252,7 @@
 				5C64D902201858D3006AEBAD /* ENSideMenu.swift in Sources */,
 				5C6AAE4920171A94000EF7D8 /* ViewController.swift in Sources */,
 				5C6AAE4720171A94000EF7D8 /* AppDelegate.swift in Sources */,
+				5C0B891B201B58D200CBAE56 /* ProfileTableViewCell.swift in Sources */,
 				5C64D903201858D3006AEBAD /* ENSideMenuNavigationController.swift in Sources */,
 				5C6AAE5F201767DE000EF7D8 /* HomePageTVC.swift in Sources */,
 			);

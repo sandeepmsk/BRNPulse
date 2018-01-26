@@ -8,9 +8,32 @@
 
 import UIKit
 
-class HomePageTVC: UITableViewController {
+class HomePageTVC: UITableViewController
+{
+    /*
+     Total Days	169
+     Working Days	122
+     Leaves	2 days
+     Absents	8 days
+     Days Attended	112 days
+     Updates Sent	112 times
+     Working Hours	976:00:00
+     Worked Hours	962:49:53
+     Overall Spent Summary	-14:11:07
+     Worked Per day(Avg.Hrs)	07:53:31(99%)
+     Shortage Per day(Avg.Hrs)	00:06:28(1%)
+     Late to Office	3 times
+     Minimum Hrs Missed	24 times
+     Max Points	3660
+     Points Earned	2910
+     Your Performance Score 79.5082%
+     */
+    var attendanceDetailsArr = ["Total Days","Working Days","Leaves","Absents","Days Attended","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
+    var detailsArr = ["169","129","2 days","8 days","112 days","112 times","976:00:00","962:49:53","-14:11:07","07:53:31(99%)","00:06:28(1%)","3 times","24 times","3660","2910","79.5082%"]
+    
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -27,25 +50,48 @@ class HomePageTVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0
+        {
+            return 1
+        }
+        else
+        {
+            return self.attendanceDetailsArr.count
+        }
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        // no need of register cell in tableview controller, we took tv in VC we have to register in viewcontroller
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "profileCell")
+        if indexPath.section == 0
+        {
+            self.tableView.rowHeight = 230;
+            let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "attendanceCell", for: indexPath)
+            cell.textLabel?.text = self.attendanceDetailsArr[indexPath.row]
+            cell.detailTextLabel?.text = self.detailsArr[indexPath.row]
+            self.tableView.separatorStyle = .singleLineEtched
+            self.tableView.rowHeight = 50;
+            return cell
+        }
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

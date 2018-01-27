@@ -37,12 +37,18 @@ class HomePageTVC: UITableViewController
     var URLReq:URLRequest?
     var dataTask:URLSessionDataTask?
     
+    var responseArr:Array<Any>?
+    
+    var attendanceSummaryDic:[String:Any]?
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         print(self.studentDic!)
+        
+        self.navigationController?.showSideMenuView()
         
         self.URLSessionObj = URLSession(configuration: .default)
         self.URLReq = URLRequest(url: URL(string: "http://www.brninfotech.com/pulse/modules/admin/DashboardSnippets.php")!)
@@ -57,10 +63,14 @@ class HomePageTVC: UITableViewController
             print(data)
             do
             {
-                //                var responseObj = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions)
+//                var responseObj = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0)))
                 
-                 var responseArr = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [[String:Any]]
-                print(responseArr)
+                self.responseArr = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [[String:Any]]
+                print(self.responseArr?[0])
+                self.attendanceSummaryDic = self.responseArr?[0] as! [String : Any]
+                
+                print(self.attendanceSummaryDic!)
+                
             }
             catch
             {
@@ -113,19 +123,57 @@ class HomePageTVC: UITableViewController
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "profileCell")
         if indexPath.section == 0
         {
-            self.tableView.rowHeight = 230;
+            self.tableView.rowHeight = 337;
             let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
-        
-            var firstName = self.studentDic?["firstName"]!
-            var surName = self.studentDic?["surName"]!
-            print("\(firstName!) \(surName!)")
-            
+//        
+//            let firstName = self.studentDic?["firstName"]!
+//            let surName = self.studentDic?["surName"]!
+//            print("\(firstName!) \(surName!)")
+//            
             print(self.studentDic?["studentID"]!)
-            cell.studetnNameLbl.text = "\(firstName!) \(surName!)"
-            cell.studentIDLbl.text = self.studentDic?["studentID"]!
+            
+//            cell.studetnNameLbl.text = "\(firstName!) \(surName!)"
+            cell.studetnNameLbl.text = (self.studentDic?["firstName"])!+" "+(self.studentDic?["surName"])!
+            cell.studentIDLbl.text = "STUDENT ID : "+(self.studentDic?["studentID"])!
+            cell.batchIDLbl.text = "BATCH ID : "+(self.studentDic?["batchID"])!
+
+            
+            print((self.studentDic!["profileImagePath"])!)
+            var img:NSString = (self.studentDic?["profileImagePath"])! as NSString
+            print(img)
+            var img1 = img.substring(from: 2)
+            print(img1)
+            
+            var imgURL = "http://www.brninfotech.com/pulse/modules"+img1
+            print(imgURL)
+            
+//            let url:URL = URL(string: imgURL)!
+            let session = URLSession(configuration: .default)
+            var urlReq = URLRequest(url: URL(string: imgURL)!)
+            urlReq.httpMethod = "GET"
+            
+            var task = session.dataTask(with: urlReq, completionHandler: { (data1, response1, error1) in
+                if data1 != nil
+                {
+                    print("image is available")
+                    var image = UIImage(data: data1!)
+                    cell.profilePicImgView.image = image
+                    
+                }
+                else
+                {
+                    print("image is not available")
+
+                }
+            })
             
             
-//            cell.studetnNameString(describing: Lbl.text = self.studentDic?["s)tudentName"] as! String
+            
+            task.resume()
+          
+
+        
+//
             return cell
         }
         else

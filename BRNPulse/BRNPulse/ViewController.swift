@@ -40,7 +40,7 @@ class ViewController: UIViewController
         self.emailIDTF.resignFirstResponder()
         self.passwordTF.resignFirstResponder()
         
-        if self.emailIDTF.text! == "" &&
+        if self.emailIDTF.text! == "" ||
             self.passwordTF.text! == ""
         {
             print("something whent wrong")
@@ -80,8 +80,10 @@ class ViewController: UIViewController
                         print("logged in successfully")
                         
                         var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+//                        HPTVC as! ViewController
                         HPTVC.studentDic = responseDic
-                        self.present(HPTVC, animated: true, completion: nil)
+//                        self.present(HPTVC, animated: true, completion: nil)
+                        self.navigationController?.pushViewController(HPTVC, animated: true)
                         
                         
                         

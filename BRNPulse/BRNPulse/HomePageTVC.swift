@@ -46,9 +46,9 @@ class HomePageTVC: UITableViewController
     {
         super.viewDidLoad()
         
+        
         print(self.studentDic!)
         
-        self.navigationController?.showSideMenuView()
         
         self.URLSessionObj = URLSession(configuration: .default)
         self.URLReq = URLRequest(url: URL(string: "http://www.brninfotech.com/pulse/modules/admin/DashboardSnippets.php")!)
@@ -173,7 +173,7 @@ class HomePageTVC: UITableViewController
           
 
         
-//
+
             return cell
         }
         else

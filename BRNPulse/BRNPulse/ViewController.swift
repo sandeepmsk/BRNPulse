@@ -20,6 +20,8 @@ class ViewController: UIViewController
     var alertCntrl:UIAlertController?
     var alertActn:UIAlertAction?
     
+    var responseDic:[String:String]?
+    
     
     override func viewDidLoad()
     {
@@ -72,18 +74,18 @@ class ViewController: UIViewController
                 
                 do
                 {
-                    var responseDic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [String:String]
-                    print(responseDic)
+                    self.responseDic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [String:String]
+                    print(self.responseDic)
                     
-                    if responseDic["loggedIn"] == "yes"
+                    if self.responseDic?["loggedIn"] == "yes"
                     {
                         print("logged in successfully")
                         
-                        var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
-//                        HPTVC as! ViewController
-                        HPTVC.studentDic = responseDic
-//                        self.present(HPTVC, animated: true, completion: nil)
-                        self.navigationController?.pushViewController(HPTVC, animated: true)
+                       var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+                        HPTVC.studentDic = self.responseDic!
+//                        var NVCObj = self.storyboard?.instantiateViewController(withIdentifier: "NVC") as! NVC
+                     self.present(HPTVC, animated: true, completion: nil)
+//                        self.navigationController?.pushViewController(HPTVC, animated: true)
                         
                         
                         
@@ -92,7 +94,7 @@ class ViewController: UIViewController
                     {
                         print("not logged in")
                         
-                        self.alertCntrl = UIAlertController(title: "Warning", message: responseDic["msg"], preferredStyle: .alert)
+                        self.alertCntrl = UIAlertController(title: "Warning", message: self.responseDic?["msg"], preferredStyle: .alert)
                         
                         self.alertActn = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
                             

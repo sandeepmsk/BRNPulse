@@ -81,13 +81,15 @@ class ViewController: UIViewController
                     {
                         print("logged in successfully")
                         
-                       var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
-                        HPTVC.studentDic = self.responseDic!
-//                        var NVCObj = self.storyboard?.instantiateViewController(withIdentifier: "NVC") as! NVC
-                     self.present(HPTVC, animated: true, completion: nil)
-//                        self.navigationController?.pushViewController(HPTVC, animated: true)
+//                       var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+//                        HPTVC.studentDic = self.responseDic!
+//                     self.present(HPTVC, animated: true, completion: nil)
+////                        self.navigationController?.pushViewController(HPTVC, animated: true)
                         
+                        // with side menu
+                        var HPNVC = self.storyboard?.instantiateViewController(withIdentifier: "HPNavViewController") as! HPNavViewController
                         
+                        self.present(HPNVC, animated: true, completion: nil)
                         
                     }
                     else

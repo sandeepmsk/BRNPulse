@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0B2A5720218F3E006E7C9A /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B2A5620218F3E006E7C9A /* MenuTableViewController.swift */; };
+		5C0B2A592021C3EE006E7C9A /* HPNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B2A582021C3EE006E7C9A /* HPNavViewController.swift */; };
 		5C0B891B201B58D200CBAE56 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */; };
 		5C64D902201858D3006AEBAD /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64D900201858D3006AEBAD /* ENSideMenu.swift */; };
 		5C64D903201858D3006AEBAD /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64D901201858D3006AEBAD /* ENSideMenuNavigationController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0B2A5620218F3E006E7C9A /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		5C0B2A582021C3EE006E7C9A /* HPNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNavViewController.swift; sourceTree = "<group>"; };
 		5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5C64D900201858D3006AEBAD /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		5C64D901201858D3006AEBAD /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			children = (
 				5C6AAE4620171A94000EF7D8 /* AppDelegate.swift */,
 				5C6AAE4820171A94000EF7D8 /* ViewController.swift */,
+				5C0B2A582021C3EE006E7C9A /* HPNavViewController.swift */,
+				5C0B2A5620218F3E006E7C9A /* MenuTableViewController.swift */,
 				5C6AAE5E201767DE000EF7D8 /* HomePageTVC.swift */,
 				5C0B891A201B58D200CBAE56 /* ProfileTableViewCell.swift */,
 				5C6AAE4A20171A94000EF7D8 /* Main.storyboard */,
@@ -252,9 +258,11 @@
 				5C64D902201858D3006AEBAD /* ENSideMenu.swift in Sources */,
 				5C6AAE4920171A94000EF7D8 /* ViewController.swift in Sources */,
 				5C6AAE4720171A94000EF7D8 /* AppDelegate.swift in Sources */,
+				5C0B2A5720218F3E006E7C9A /* MenuTableViewController.swift in Sources */,
 				5C0B891B201B58D200CBAE56 /* ProfileTableViewCell.swift in Sources */,
 				5C64D903201858D3006AEBAD /* ENSideMenuNavigationController.swift in Sources */,
 				5C6AAE5F201767DE000EF7D8 /* HomePageTVC.swift in Sources */,
+				5C0B2A592021C3EE006E7C9A /* HPNavViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

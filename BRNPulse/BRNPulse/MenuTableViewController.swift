@@ -8,13 +8,15 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class MenuTableViewController: UITableViewController
+{
 
+    var responseDic:[String:String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 0, right: 0)
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -94,5 +96,32 @@ class MenuTableViewController: UITableViewController {
 //        // Pass the selected object to the new view controller.
 //    }
 //    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        var destinationVC = UIViewController()
+        if indexPath.row == 0
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+        }
+        else if indexPath.row == 1
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "DailyStatusUpdateVC") as! DailyStatusUpdateVC
+        }
+        else if indexPath.row == 2
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateReuestVC") as! CreateReuestVC
+        }
+        else if indexPath.row == 3
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ApplyLeaveVC") as! ApplyLeaveVC
+        }else
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "AppSearchVC") as! AppSearchVC
+        }
+        sideMenuController()?.setContentViewController(destinationVC)
+        
+        
+    }
 
 }

@@ -77,6 +77,8 @@ class ViewController: UIViewController
                     self.responseDic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [String:String]
                     print(self.responseDic)
                     
+                    DataStore.responseStaticDic = self.responseDic
+                    
                     if self.responseDic?["loggedIn"] == "yes"
                     {
                         print("logged in successfully")
@@ -86,10 +88,26 @@ class ViewController: UIViewController
 //                     self.present(HPTVC, animated: true, completion: nil)
 ////                        self.navigationController?.pushViewController(HPTVC, animated: true)
                         
+                        
                         // with side menu
                         var HPNVC = self.storyboard?.instantiateViewController(withIdentifier: "HPNavViewController") as! HPNavViewController
+                        HPNVC.responseDic = self.responseDic
+                        print(HPNVC.responseDic!)
+                        
+//                        var hptvc = HPNVC.viewControllers[0] as! HomePageTVC
+//                        hptvc.studentDic = HPNVC.responseDic
+//                        print(hptvc.studentDic!)
+                        
+                        
+                        
                         
                         self.present(HPNVC, animated: true, completion: nil)
+//                        self.present(HPNVC, animated: true, completion:
+//                            {
+//                            var HPTVC = self.storyboard?.instantiateViewController(withIdentifier: "HPTVC") as! HomePageTVC
+//                            HPTVC.studentDic = self.responseDic
+//                            print(HPTVC.studentDic!)
+//                        })
                         
                     }
                     else

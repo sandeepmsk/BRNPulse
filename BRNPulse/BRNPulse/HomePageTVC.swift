@@ -31,9 +31,7 @@ class HomePageTVC: UITableViewController
     
     
     
-    @IBAction func onMenuTapped(_ sender: Any) {
-        toggleSideMenuView()
-    }
+  
     
     var attendanceDetailsArr = ["Total Days","Working Days","Leaves","Absents","Days Attended","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
     var detailsArr = ["169","129","2 days","8 days","112 days","112 times","976:00:00","962:49:53","-14:11:07","07:53:31(99%)","00:06:28(1%)","3 times","24 times","3660","2910","79.5082%"]
@@ -51,9 +49,18 @@ class HomePageTVC: UITableViewController
 
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+//        super.viewDidLoad()
         
-/*
+        self.studentDic = DataStore.responseStaticDic
+        
+        print(self.studentDic!)
+        let imagView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        imagView.contentMode = .scaleAspectFit
+        imagView.image = UIImage(named: "Simulator Screen Shot Jan 23, 2018, 6.10.09 PM-iloveimg-cropped.png")
+        
+        navigationItem.titleView = imagView
+        
+
         print(self.studentDic!)
         
         
@@ -88,7 +95,7 @@ class HomePageTVC: UITableViewController
         self.dataTask?.resume()
         
         
-*/
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -132,7 +139,7 @@ class HomePageTVC: UITableViewController
         {
             self.tableView.rowHeight = 337;
             let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
-/*
+
             //
 //            let firstName = self.studentDic?["firstName"]!
 //            let surName = self.studentDic?["surName"]!
@@ -171,6 +178,7 @@ class HomePageTVC: UITableViewController
                 else
                 {
                     print("image is not available")
+                    cell.profilePicImgView.image = UIImage(named: "profilePic.png")
 
                 }
             })
@@ -180,7 +188,7 @@ class HomePageTVC: UITableViewController
             task.resume()
           
 
-    */
+    
 
             return cell
         }
@@ -240,5 +248,10 @@ class HomePageTVC: UITableViewController
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK:- Menu Button Acrion
+    @IBAction func onMenuTapped(_ sender: Any)
+    {
+        toggleSideMenuView()
+    }
 
 }

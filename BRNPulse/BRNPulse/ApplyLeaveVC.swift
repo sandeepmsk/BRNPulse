@@ -10,6 +10,10 @@ import UIKit
 
 class ApplyLeaveVC: UIViewController {
 
+    @IBAction func onMenuTapped(_ sender: Any)
+    {
+        toggleSideMenuView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

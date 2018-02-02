@@ -22,6 +22,15 @@ class ProfileTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        
+        self.profilePicImgView.layer.cornerRadius = (self.profilePicImgView.bounds.size.width)/2
+        self.profilePicImgView.clipsToBounds = true
+        
+//        self.studetnNameLbl.text = (DataStore.staticResponseDic?["firstName"])!+(DataStore.staticResponseDic?["surName"])!
+//        self.batchIDLbl.text = "BATCH ID : "+(DataStore.staticResponseDic?["batchID"])!
+//        self.studentIDLbl.text = "STUDENT ID : "+(DataStore.staticResponseDic?["studentID"])!
+//        self.profilePicImgView.image = UIImage(data: DataStore.staticImageData!)
+        
         // Initialization code
     }
 

@@ -8,8 +8,13 @@
 
 import UIKit
 
-class AppSearchVC: UIViewController {
-
+class AppSearchVC: UIViewController
+{
+   
+    @IBAction func onMenuTapped(_ sender: Any)
+    {
+        toggleSideMenuView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

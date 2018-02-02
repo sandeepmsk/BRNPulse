@@ -8,8 +8,13 @@
 
 import UIKit
 
-class CreateReuestVC: UIViewController {
+class CreateReuestVC: UIViewController
+{
 
+    @IBAction func onMenuTapped(_ sender: Any)
+    {
+        toggleSideMenuView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

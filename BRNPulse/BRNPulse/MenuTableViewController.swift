@@ -11,7 +11,6 @@ import UIKit
 class MenuTableViewController: UITableViewController
 {
 
-    var responseDic:[String:String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +29,52 @@ class MenuTableViewController: UITableViewController
         // Dispose of any resources that can be recreated.
     }
 
-//    // MARK: - Table view data source
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-//
-//    /*
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
-//    */
+    
+    /*
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        // #warning Incomplete implementation, return the number of sections
+        return 2
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if section == 0
+        {
+            return 1
+        }
+        else
+        {
+            return 5
+        }
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        if indexPath.section == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuProfileCell", for: indexPath) as! ProfileTableViewCell
+            
+//            cell.studetnNameLbl.text = (DataStore.responseStaticDic?["firstName"])!+(DataStore.responseStaticDic?["surName"])!
+//            cell.batchIDLbl.text = "BATCH ID : "+(DataStore.responseStaticDic?["batchID"])!
+//            cell.studentIDLbl.text = "STUDENT ID : "+(DataStore.responseStaticDic?["studentID"])!
+//            cell.profilePicImgView.image = UIImage(data: DataStore.imageData!)
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath)
+            cell.textLabel?.text = "Home"
+            return cell
+        }
+    }
+    
+    
+ */
+ 
 //
 //    /*
 //    // Override to support conditional editing of the table view.

@@ -21,7 +21,7 @@ class HPNavViewController: ENSideMenuNavigationController
 
         
         sideMenu = ENSideMenu(sourceView: view, menuViewController: menu, menuPosition: .left)
-        sideMenu?.menuWidth = (view.bounds.size.width)/2
+        sideMenu?.menuWidth = (view.bounds.size.width*3)/4
         view.bringSubview(toFront: navigationBar)
         
 

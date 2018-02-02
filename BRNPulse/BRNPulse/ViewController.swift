@@ -20,8 +20,9 @@ class ViewController: UIViewController
     var alertCntrl:UIAlertController?
     var alertActn:UIAlertAction?
     
-    var responseDic:[String:String]?
     
+    var responseDic:[String:String]?
+        
     
     override func viewDidLoad()
     {
@@ -77,7 +78,7 @@ class ViewController: UIViewController
                     self.responseDic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: JSONSerialization.ReadingOptions.RawValue(0))) as! [String:String]
                     print(self.responseDic)
                     
-                    DataStore.responseStaticDic = self.responseDic
+                    DataStore.staticResponseDic = self.responseDic
                     
                     if self.responseDic?["loggedIn"] == "yes"
                     {
@@ -91,6 +92,8 @@ class ViewController: UIViewController
                         
                         // with side menu
                         var HPNVC = self.storyboard?.instantiateViewController(withIdentifier: "HPNavViewController") as! HPNavViewController
+                        
+                        
                         HPNVC.responseDic = self.responseDic
                         print(HPNVC.responseDic!)
                         

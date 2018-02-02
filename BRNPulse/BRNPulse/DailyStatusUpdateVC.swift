@@ -8,8 +8,13 @@
 
 import UIKit
 
-class DailyStatusUpdateVC: UIViewController {
+class DailyStatusUpdateVC: UIViewController
+{
 
+    @IBAction func onMenuTapped(_ sender: Any)
+    {
+        toggleSideMenuView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

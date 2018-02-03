@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BRNPulse" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BRNPulse" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -390,6 +390,11 @@
                                 <action selector="onMenuTapped:" destination="cWT-Nf-qqH" id="YZC-1C-0rv"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="siX-qC-MfW">
+                            <connections>
+                                <action selector="onLgoutTapped:" destination="cWT-Nf-qqH" id="5vA-Ar-zt2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -417,7 +422,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIL-kY-bzR">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="🏠 Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIL-kY-bzR">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -434,7 +439,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Attendance Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSJ-Tg-Sai">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="📊 Attendance Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSJ-Tg-Sai">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="zwh-SX-QgI" style="IBUITableViewCellStyleDefault" id="Lwb-oz-NYP">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lwb-oz-NYP" id="LVq-Q0-0OW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="📝 Daily Statusupdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zwh-SX-QgI">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -445,13 +467,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="4g0-RX-tei" style="IBUITableViewCellStyleDefault" id="z4u-Gh-JTT">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4u-Gh-JTT" id="Q41-q7-5Ce">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Create Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4g0-RX-tei">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="📮 Create Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4g0-RX-tei">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -462,13 +484,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Uaq-Lc-8MW" style="IBUITableViewCellStyleDefault" id="rZs-i1-aqy">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZs-i1-aqy" id="YtW-Y5-J49">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Apply Leave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uaq-Lc-8MW">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="🗓 Apply Leave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uaq-Lc-8MW">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -479,13 +501,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="L1b-ip-NTQ" style="IBUITableViewCellStyleDefault" id="2PH-cN-lLz">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2PH-cN-lLz" id="D2t-pf-EUF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="App Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L1b-ip-NTQ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="📱 App Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L1b-ip-NTQ">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -496,13 +518,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Rae-2s-cdK" style="IBUITableViewCellStyleDefault" id="Jxv-Ij-EdV">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jxv-Ij-EdV" id="crj-7k-tcw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rae-2s-cdK">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="📷Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rae-2s-cdK">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -513,13 +535,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="58m-zI-fPE" style="IBUITableViewCellStyleDefault" id="GHy-r4-wY0">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GHy-r4-wY0" id="pJw-48-Ai3">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="58m-zI-fPE">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="⤴️Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="58m-zI-fPE">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -542,6 +564,37 @@
             </objects>
             <point key="canvasLocation" x="3071.25" y="135"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="OFr-uh-DUE">
+            <objects>
+                <viewController storyboardIdentifier="AttendanceDetailsVC" id="QUi-z8-HCf" customClass="AttendanceDetailsVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4e5-De-xnD"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdR-Cg-Bxr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XRo-tb-uzq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.65818246290000004" green="0.53402483990000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="zdB-1o-nO7">
+                        <barButtonItem key="leftBarButtonItem" image="menu1.png" id="up5-qc-AvR">
+                            <connections>
+                                <action selector="onMenuTapped:" destination="QUi-z8-HCf" id="UED-7k-IOy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="mEL-c9-9It">
+                            <connections>
+                                <action selector="onLogoutTapped:" destination="QUi-z8-HCf" id="5GZ-Rp-2lx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wZ-BG-lSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="1298"/>
+        </scene>
         <!--Daily-->
         <scene sceneID="OyJ-Tn-4uN">
             <objects>
@@ -561,6 +614,7 @@
                                 <action selector="onMenuTapped:" destination="lrX-Ez-xKx" id="kT1-q4-zQD"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="6Y0-42-Gg0"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -568,10 +622,10 @@
             </objects>
             <point key="canvasLocation" x="3071" y="1298"/>
         </scene>
-        <!--Create ReuestVC-->
+        <!--Create RequestVC-->
         <scene sceneID="bhZ-Vm-4mV">
             <objects>
-                <viewController storyboardIdentifier="CreateReuestVC" id="rLe-fb-hJK" customClass="CreateReuestVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateRequestVC" id="rLe-fb-hJK" customClass="CreateRequestVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HHR-dh-H27"/>
                         <viewControllerLayoutGuide type="bottom" id="SIp-fE-jJ2"/>
@@ -587,6 +641,7 @@
                                 <action selector="onMenuTapped:" destination="rLe-fb-hJK" id="4Kf-y3-TlU"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="pm3-CS-kNm"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -613,6 +668,7 @@
                                 <action selector="onMenuTapped:" destination="KIH-WW-R2a" id="zb0-Dh-ya9"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="GHP-Cy-5ir"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -639,12 +695,36 @@
                                 <action selector="onMenuTapped:" destination="yLQ-WS-GQh" id="yBY-aF-7Mk"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="SEc-Mq-mYy"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmk-6a-YeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5929" y="1298"/>
+            <point key="canvasLocation" x="5591" y="1298"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="gwH-qH-ZM2">
+            <objects>
+                <viewController storyboardIdentifier="GalleryVC" id="CUm-Wl-1oQ" customClass="GalleryVC" customModule="BRNPulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xpt-X3-YfK"/>
+                        <viewControllerLayoutGuide type="bottom" id="SXz-YI-Q48"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="axj-bm-rrO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="dXw-go-p9P">
+                        <barButtonItem key="leftBarButtonItem" image="menu1.png" id="6gO-Dm-ORJ"/>
+                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="hd1-tQ-JEZ"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qkb-d3-kYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6276" y="1298"/>
         </scene>
         <!--Nav View Controller-->
         <scene sceneID="7Ak-re-sKu">
@@ -667,6 +747,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logout.png" width="30" height="30"/>
         <image name="menu1.png" width="50" height="50"/>
         <image name="profilePic.png" width="775" height="720"/>
     </resources>

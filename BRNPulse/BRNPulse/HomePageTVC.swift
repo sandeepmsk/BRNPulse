@@ -171,6 +171,12 @@ class HomePageTVC: UITableViewController
         task.resume()
     }
 
+    @IBAction func onLgoutTapped(_ sender: Any)
+    {
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.present(destinationVC, animated: true, completion: nil)
+
+    }
     
     //MARK:-Getting Attendance Details
     func gettingAttendanceDetails()
@@ -227,4 +233,8 @@ class HomePageTVC: UITableViewController
 
         
     }
+    
+    
+    
+    
 }

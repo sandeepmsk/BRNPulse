@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateReuestVC: UIViewController
+class CreateRequestVC: UIViewController
 {
 
     @IBAction func onMenuTapped(_ sender: Any)

@@ -130,20 +130,31 @@ class MenuTableViewController: UITableViewController
         }
         else if indexPath.row == 1
         {
-            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "DailyStatusUpdateVC") as! DailyStatusUpdateVC
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "AttendanceDetailsVC") as! AttendanceDetailsVC
         }
         else if indexPath.row == 2
         {
-            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateReuestVC") as! CreateReuestVC
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "DailyStatusUpdateVC") as! DailyStatusUpdateVC
         }
         else if indexPath.row == 3
         {
-            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ApplyLeaveVC") as! ApplyLeaveVC
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateRequestVC") as! CreateRequestVC
         }else if indexPath.row == 4
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ApplyLeaveVC") as! ApplyLeaveVC
+        }
+        else if indexPath.row == 5
         {
             destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "AppSearchVC") as! AppSearchVC
         }
-        
+        else if indexPath.row == 6
+        {
+            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "GalleryVC") as! GalleryVC
+        }
+//        else
+//        {
+//            destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        }
         sideMenuController()?.setContentViewController(destinationVC)
         
         

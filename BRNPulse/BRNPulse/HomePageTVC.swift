@@ -32,13 +32,12 @@ class HomePageTVC: UITableViewController
         self.studentDic = DataStore.staticResponseDic
         
         print(self.studentDic!)
-        let imagView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        let imagView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imagView.contentMode = .scaleAspectFit
-        imagView.image = UIImage(named: "Simulator Screen Shot Jan 23, 2018, 6.10.09 PM-iloveimg-cropped.png")
+        imagView.image = UIImage(named: "BRNlogo.png")
         
         navigationItem.titleView = imagView
         
-        var headerView = tableView.headerView(forSection: 1) as! UITableViewHeaderFooterView
         
         
         self.loadingImageFromServer()
@@ -69,8 +68,6 @@ class HomePageTVC: UITableViewController
         }
         else
         {
-            print("count is \(HomePageTVC.attendanceSummaryDetailsArry.count)")
-
             return self.attendanceDetailsArr.count
         }
     }
@@ -83,12 +80,16 @@ class HomePageTVC: UITableViewController
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "profileCell")
         if indexPath.section == 0
         {
-            self.tableView.rowHeight = 337;
+            self.tableView.rowHeight = 353;
             let  cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
             cell.studetnNameLbl.text = (DataStore.staticResponseDic?["firstName"])!+(DataStore.staticResponseDic?["surName"])!
             cell.batchIDLbl.text = "BATCH ID : "+(DataStore.staticResponseDic?["batchID"])!
             cell.studentIDLbl.text = "STUDENT ID : "+(DataStore.staticResponseDic?["studentID"])!
-            cell.profilePicImgView.image = UIImage(data: DataStore.staticImageData!)
+            if DataStore.staticImageData != nil
+            {
+                cell.profilePicImgView.image = UIImage(data: DataStore.staticImageData!)
+
+            }
             return cell
         }
         else
@@ -96,31 +97,41 @@ class HomePageTVC: UITableViewController
             let cell = tableView.dequeueReusableCell(withIdentifier: "attendanceCell", for: indexPath)
             cell.textLabel?.text = self.attendanceDetailsArr[indexPath.row]
 //            cell.detailTextLabel?.text = self.detailsArr[indexPath.row]
-            print("count is \(HomePageTVC.attendanceSummaryDetailsArry.count)")
             if HomePageTVC.attendanceSummaryDetailsArry.count != 0
             {
-                print(HomePageTVC.attendanceSummaryDetailsArry)
                 cell.detailTextLabel?.text = (String)(describing: HomePageTVC.attendanceSummaryDetailsArry[indexPath.row] as Any)
                 self.tableView.separatorStyle = .singleLineEtched
                 self.tableView.rowHeight = 50;
-                
-
             }
             return cell
 
             
         }
     }
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-//    {
-//        
-//        var title :String?
-//        if section == 1
-//        {
-//            title = "ATTENDANCE SUMMARY"
-//        }
-//        return title
-//    }
+    //MARK: -Tableview Delegates
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        var height = CGFloat()
+        if section == 1
+        {
+            height = 40
+        }
+        return height
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        if section == 1
+        {
+            let headerView = view as! UITableViewHeaderFooterView
+            headerView.contentView.backgroundColor = UIColor.init(colorLiteralRed: 0.2157, green: 0.5059, blue: 0.2118 , alpha: 1)
+            headerView.textLabel?.text = "ATTENDANCE SUMMARY"
+            headerView.textLabel?.textColor = UIColor.white
+            headerView.textLabel?.textAlignment = .center
+            headerView.textLabel?.font = UIFont.init(name: "Arial", size: 27)        }
+        
+    }
 
     //MARK:- Menu Button Acrion
     @IBAction func onMenuTapped(_ sender: Any)
@@ -193,15 +204,12 @@ class HomePageTVC: UITableViewController
                 self.attendanceSummaryAssigning()
 
                 
-                self.tableView.delegate = self
-                self.tableView.dataSource = self
                 
             }
             catch
             {
                 print("something went wrong")
             }
-            self.tableView.reloadData()
         })
         
         self.dataTask?.resume()
@@ -209,16 +217,14 @@ class HomePageTVC: UITableViewController
     
     func attendanceSummaryAssigning()
     {
-//        var attendanceDetailsArr = ["Total Days","Working Days","Leaves","Absents","Days Attended","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
         print("student attendance summary is \(DataStore.staticAttendanceSummaryDataDic!)")
 
         HomePageTVC.attendanceSummaryDetailsArry = [(DataStore.staticAttendanceSummaryDataDic?["totalDays"])!,(DataStore.staticAttendanceSummaryDataDic?["totalWorkingDays"])!,(DataStore.staticAttendanceSummaryDataDic?["totalLeaves"])!,(DataStore.staticAttendanceSummaryDataDic?["totalAbsents"])!,(DataStore.staticAttendanceSummaryDataDic?["totalDaysAttended"])!,(DataStore.staticAttendanceSummaryDataDic?["totalUpdatesSent"])!,(DataStore.staticAttendanceSummaryDataDic?["totalWorkingHours"])!,(DataStore.staticAttendanceSummaryDataDic?["totalWorkedHours"])!,(DataStore.staticAttendanceSummaryDataDic?["totalShortageHours"])!,(DataStore.staticAttendanceSummaryDataDic?["avgWorkingHours"])!,(DataStore.staticAttendanceSummaryDataDic?["avgShortageHours"])!,(DataStore.staticAttendanceSummaryDataDic?["numberOfTimesLateToOffice"])!,(DataStore.staticAttendanceSummaryDataDic?["numberOfTimesMinimumHoursMissed"])!,(DataStore.staticAttendanceSummaryDataDic?["maxPoints"])!,(DataStore.staticAttendanceSummaryDataDic?["pointsScored"])!,(DataStore.staticAttendanceSummaryDataDic?["percScored"])!]
         
         print(HomePageTVC.attendanceSummaryDetailsArry)
         
+        self.tableView.reloadData()
+
         
-        
-        
-//        self.attendanceSummaryDetailsArry = [(DataStore.staticAttendanceSummaryDataDic?["totalDays"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalWorkingDays"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalLeaves"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalAbsents"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalDaysAttended"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalUpdatesSent"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalWorkingHours"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalWorkedHours"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["totalShortageHours"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["avgWorkingHours"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["avgShortageHours"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["numberOfTimesLateToOffice"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["numberOfTimesMinimumHoursMissed"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["maxPoints"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["pointsScored"])! as! String,(DataStore.staticAttendanceSummaryDataDic?["percScored"])! as! String]
     }
 }

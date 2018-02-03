@@ -139,10 +139,11 @@ class MenuTableViewController: UITableViewController
         else if indexPath.row == 3
         {
             destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ApplyLeaveVC") as! ApplyLeaveVC
-        }else
+        }else if indexPath.row == 4
         {
             destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "AppSearchVC") as! AppSearchVC
         }
+        
         sideMenuController()?.setContentViewController(destinationVC)
         
         

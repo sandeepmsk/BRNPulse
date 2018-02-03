@@ -14,8 +14,14 @@ class ApplyLeaveVC: UIViewController {
     {
         toggleSideMenuView()
     }
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        let imagView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imagView.contentMode = .scaleAspectFit
+        imagView.image = UIImage(named: "BRNlogo.png")
+        
+        navigationItem.titleView = imagView
 
         // Do any additional setup after loading the view.
     }
